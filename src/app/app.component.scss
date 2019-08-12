@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,700&display=swap");
+.phone-board {
+  width: 306px;
+  margin: auto;
+  display: flex;
+  border: 1px solid grey;
+  flex-flow: wrap;
+  justify-content: center;
+  .phone-screen {
+    height: 70px;
+    width: 100%;
+    padding: 12px;
+    font-family: "Crimson Text", serif;
+    .query {
+      text-align: right;
+    }
+    .response {
+      font-weight: 700;
+      text-align: right;
+      margin-top: 16px;
+    }
+  }
+  .phoneButton {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border: 1px solid grey;
+    flex-direction: column;
+    cursor: pointer;
+    font-family: "Crimson Text", serif;
+    background-color: #efefef;
+    letter-spacing: 2px;
+    &:hover {
+      background-color: #e6e6e6;
+    }
+    .number {
+        font-size: 20px;
+    }
+    .description {
+        margin-top: 10px;
+    }
+  }
+}
