@@ -4,14 +4,14 @@
       {{ query }}
     </div>
     <div class="response" *ngIf="response.length > 0">
-      Calling... {{ response }}
+      {{ response }}
     </div>
   </div>
   <div
     class="phoneButton"
     *ngFor="let phoneNumber of phoneBoard"
     (click)="
-      phoneNumber !== '*'
+      phoneNumber.number !== '*'
         ? handleButtonClick(phoneNumber.number)
         : sendMessage()
     "
@@ -22,5 +22,8 @@
     <div class="description">
       {{ phoneNumber.description }}
     </div>
+  </div>
+  <div class="actions" *ngIf="isResponded" (click)="resetScreen()">
+    <button>Clear</button>
   </div>
 </div>

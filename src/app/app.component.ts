@@ -8,6 +8,7 @@ import { HeroService } from './hero.service';
 export class AppComponent {
   query: string = "Please type your number";
   response: string = "";
+  isResponded = false;
   phoneBoard = [
     {
       number: 1,
@@ -69,12 +70,24 @@ export class AppComponent {
     }
   }
   sendMessage = function () {
-    this.heroService.callMyHero(this.query).subscribe((data: any) => {
-      if (data.status == 200) {
-        this.response = data.message;
-      } else {
-        this.response = "";
-      }
-    })
+    const components = this.query.split(" ");
+    if (components[0] === "0") {
+      this.heroService.callMyHero(components[1]).subscribe((data: any) => {
+        if (data.status == 200) {
+          this.response = `Calling... ${data.message}`;
+        } else {
+          this.response = "No hero found with this code";
+        }
+        this.isResponded = true;
+      })
+    } else {
+      this.response = "Invalid Format try use 0<space><hero code>";
+      this.isResponded = true;
+    }
+  }
+  resetScreen = function () {
+    this.query = "Please type your number";
+    this.response = "";
+    this.isResponded = false;
   }
 }

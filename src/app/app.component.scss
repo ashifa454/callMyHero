@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,700&display=swap");
 .phone-board {
-  width: 306px;
+  width: 336px;
   margin: auto;
   display: flex;
   border: 1px solid grey;
@@ -21,8 +21,8 @@
     }
   }
   .phoneButton {
-    height: 100px;
-    width: 100px;
+    height: 110px;
+    width: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,10 +37,23 @@
       background-color: #e6e6e6;
     }
     .number {
-        font-size: 20px;
+      font-size: 20px;
     }
     .description {
-        margin-top: 10px;
+      margin-top: 10px;
+    }
+  }
+  .actions {
+    width: 100%;
+    button {
+      height: 30px;
+      background: red;
+      border: none;
+      color: white;
+      text-transform: uppercase;
+      font-size: 15px;
+      cursor: pointer;
+      width: 100%;
     }
   }
 }
